@@ -7,8 +7,17 @@ ALLOWED_ACTIONS = {
     "turn_right",
     "spin_left",
     "spin_right",
+
+    # Actions avancées
+    "hello",
+    "sit",
+    "stretch",
+    "dance",
+    "backflip",
+
     "stop",
 }
+
 
 MOVEMENT_ACTIONS = {
     "forward",
@@ -18,6 +27,7 @@ MOVEMENT_ACTIONS = {
     "spin_left",
     "spin_right",
 }
+
 
 MAX_DURATION = 3.0
 MAX_TOTAL_MOVEMENT_DURATION = 5.0
@@ -31,6 +41,7 @@ def secure_actions(actions):
         action = item.get("action")
         duration = item.get("duration", 0)
 
+        # Refuse toute action inconnue
         if action not in ALLOWED_ACTIONS:
             print(f"SECURITE : action refusée -> {action}")
             continue
@@ -43,6 +54,7 @@ def secure_actions(actions):
 
         duration = max(0.0, duration)
 
+        # Les déplacements sont limités dans le temps
         if action in MOVEMENT_ACTIONS:
 
             duration = min(duration, MAX_DURATION)
@@ -60,6 +72,7 @@ def secure_actions(actions):
 
             total_movement_duration += duration
 
+        # Les actions prédéfinies n'utilisent pas de durée
         else:
             duration = 0.0
 

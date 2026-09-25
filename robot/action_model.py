@@ -13,6 +13,14 @@ class RobotAction(BaseModel):
         "turn_right",
         "spin_left",
         "spin_right",
+
+        # Actions avancées du Go2
+        "hello",
+        "sit",
+        "stretch",
+        "dance",
+        "backflip",
+
         "stop"
     ]
 
@@ -30,11 +38,16 @@ def validate_actions(raw_actions):
         try:
             action = RobotAction.model_validate(item)
 
-            # Les actions qui ne sont pas des déplacements
-            # n'ont pas besoin de durée.
+            # Seuls les déplacements contrôlés par une durée
+            # utilisent réellement le champ duration.
             if action.action in [
                 "stand_up",
                 "stand_down",
+                "hello",
+                "sit",
+                "stretch",
+                "dance",
+                "backflip",
                 "stop"
             ]:
                 action.duration = 0

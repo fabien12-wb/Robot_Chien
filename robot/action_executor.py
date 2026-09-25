@@ -29,5 +29,20 @@ def execute_actions(robot, actions):
         elif action == "spin_right":
             robot.spin_right(duration)
 
+        elif action == "hello":
+            robot.hello()
+
+        elif action == "sit":
+            robot.sit()
+
+        elif action == "stretch":
+            robot.stretch()
+
+        elif action == "dance":
+            robot.dance()
+
+        elif action == "backflip":
+            robot.backflip()
+
         elif action == "stop":
             robot.stop()

@@ -25,11 +25,30 @@ class RobotSimulator:
         print(f"SIMULATION : le Go2 tourne à droite pendant {duration} seconde(s)")
         time.sleep(duration)
 
-    def spin_left(self, duration):
-        print(f"SIMULATION : rotation gauche pendant {duration}s")
+    def spin_left(self, duration=1):
+        print(f"SIMULATION : le Go2 effectue une rotation à gauche pendant {duration} seconde(s)")
+        time.sleep(duration)
 
-    def spin_right(self, duration):
-        print(f"SIMULATION : rotation droite pendant {duration}s")
+    def spin_right(self, duration=1):
+        print(f"SIMULATION : le Go2 effectue une rotation à droite pendant {duration} seconde(s)")
+        time.sleep(duration)
+
+    # Actions avancées
+
+    def hello(self):
+        print("SIMULATION : le Go2 effectue un geste de salutation")
+
+    def sit(self):
+        print("SIMULATION : le Go2 s'assoit")
+
+    def stretch(self):
+        print("SIMULATION : le Go2 s'étire")
+
+    def dance(self):
+        print("SIMULATION : le Go2 effectue une danse")
+
+    def backflip(self):
+        print("SIMULATION : le Go2 effectue un salto arrière")
 
     def stop(self):
         print("SIMULATION : arrêt du Go2")

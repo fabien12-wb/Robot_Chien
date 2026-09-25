@@ -51,5 +51,23 @@ class Go2Controller:
         time.sleep(duration)
         self.client.StopMove()
 
+    def hello(self):
+        self.client.Hello()
+
+    def sit(self):
+        self.client.Sit()
+
+    def stretch(self):
+        self.client.Stretch()
+
+    def dance(self):
+        self.client.Dance1()
+
+    def backflip(self):
+        self.client.BackFlip()
+
+    def stop(self):
+        self.client.StopMove()
+
     def stop(self):
         self.client.StopMove()
